@@ -7,7 +7,7 @@ use App\Drivers\Driver;
 
 class BoardBus extends BoardAnyCar
 {
-    public static int $capacity = 4;
+    public static int $capacity = 30;
 
     public function __construct()
     {
@@ -17,9 +17,9 @@ class BoardBus extends BoardAnyCar
         $this->passengerType = 'Bus passenger';
     }
 
-    public function getCapacity(): int
+    public static function getCapacity(): int
     {
-        return self::$capacity = 4;
+        return self::$capacity;
     }
 
     public function boardDriver(Driver $driver): void

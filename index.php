@@ -19,12 +19,12 @@ for ($i = 0; $i < 60; $i++) {
     $busPassengers[] = new BusPassenger();
 }
 
-for ($i = 0; $i < count($taxiPassengers) / BoardTaxi::$capacity; $i++) {
+for ($i = 0; $i < count($taxiPassengers) / BoardTaxi::getCapacity(); $i++) {
     $taxi = new BoardTaxi();
     $taxi->boardTaxi($taxiPassengers);
 }
 
-for ($i = 0; $i < count($busPassengers) / BoardBus::$capacity; $i++) {
+for ($i = 0; $i < count($busPassengers) / BoardBus::getCapacity(); $i++) {
     $bus = new BoardBus();
     $bus->boardBus($taxiPassengers);
 }
