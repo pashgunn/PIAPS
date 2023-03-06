@@ -6,13 +6,18 @@ use App\Drivers\Driver;
 
 class BoardTaxi extends BoardAnyCar
 {
+
     public function __construct()
     {
         $this->currentPassengerCount = 0;
         $this->type = 'Taxi';
         $this->category = 'B';
-        self::$capacity = 4;
         $this->passengerType = 'Taxi passenger';
+    }
+
+    public function getCapacity(): int
+    {
+        return self::$capacity = 4;
     }
 
     public function boardDriver(Driver $driver): void

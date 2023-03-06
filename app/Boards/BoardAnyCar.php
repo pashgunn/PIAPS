@@ -17,4 +17,5 @@ abstract class BoardAnyCar
 
     abstract public function boardDriver(Driver $driver): void;
     abstract public function boardPassengers(array $passengers): void;
+    abstract public function getCapacity(): int;
 }
