@@ -7,24 +7,27 @@ use App\Boards\BoardTaxi;
 use App\Passengers\BusPassenger;
 use App\Passengers\TaxiPassenger;
 
+// Taxi
+
+$countTaxiPassengers = 60;
+
 $taxiPassengers = [];
-$taxi = new TaxiPassenger();
-for ($i = 0; $i < 60; $i++) {
+for ($i = 0; $i < $countTaxiPassengers; $i++) {
     $taxiPassengers[] = new TaxiPassenger();
 }
 
-$busPassengers = [];
+$taxi = new BoardTaxi();
+$taxi->boardTaxi($taxiPassengers);
 
+// Bus
+
+$countBusPassengers = 60;
+
+$busPassengers = [];
 for ($i = 0; $i < 60; $i++) {
     $busPassengers[] = new BusPassenger();
 }
 
-for ($i = 0; $i < count($taxiPassengers) / BoardTaxi::getCapacity(); $i++) {
-    $taxi = new BoardTaxi();
-    $taxi->boardTaxi($taxiPassengers);
-}
+$bus = new BoardBus();
+$bus->boardBus($busPassengers);
 
-for ($i = 0; $i < count($busPassengers) / BoardBus::getCapacity(); $i++) {
-    $bus = new BoardBus();
-    $bus->boardBus($taxiPassengers);
-}

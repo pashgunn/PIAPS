@@ -13,7 +13,7 @@ abstract class BoardAnyCar
     public static int $capacity;
     protected string $passengerType;
     protected int $currentPassengerCount;
-    protected Passenger $passengers;
+    protected array|Passenger $passengers = [];
 
     abstract public function boardDriver(Driver $driver): void;
     abstract public function boardPassengers(array $passengers): void;
