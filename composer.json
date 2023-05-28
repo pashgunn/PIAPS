@@ -1,6 +1,8 @@
 {
   "require": {
-    "php": "^8.1.0"
+    "php": "^8.1.0",
+    "ext-mysqli": "*",
+    "ext-pdo": "*"
   },
   "autoload": {
     "psr-4": {
